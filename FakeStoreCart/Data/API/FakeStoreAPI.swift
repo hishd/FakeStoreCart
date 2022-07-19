@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class FakeStoreAPI: APIService {
-    let shared = FakeStoreAPI()
+    static let shared = FakeStoreAPI()
     private var baseUrl: String
     private var cancellables = Set<AnyCancellable>()
     
