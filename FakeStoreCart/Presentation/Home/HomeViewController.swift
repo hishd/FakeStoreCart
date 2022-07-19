@@ -13,7 +13,8 @@ class HomeViewController : UIViewController, BaseViewController {
     
     private lazy var itemsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -29,8 +30,12 @@ class HomeViewController : UIViewController, BaseViewController {
     
     func configureUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
+        navigationItem.title = "Available Items"
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
         if let navigation = self.navigationController as? CustomNavigationController {
             navigation.requiredStatusBarStyle = .darkContent
@@ -46,6 +51,9 @@ class HomeViewController : UIViewController, BaseViewController {
             paddingLeft: 10,
             paddingBottom: 10,
             paddingRight: 10)
+        itemsTableView.dataSource = self
+        itemsTableView.delegate = self
+        itemsTableView.register(ItemTableViewCell.self, forCellReuseIdentifier: "ItemCell")
     }
     
     func setupObservers() {
@@ -55,4 +63,20 @@ class HomeViewController : UIViewController, BaseViewController {
                 
             }.store(in: &self.cancellables)
     }
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemTableViewCell else {
+            fatalError("Unabel to create cell")
+        }
+        
+        return cell
+    }
+    
+    
 }

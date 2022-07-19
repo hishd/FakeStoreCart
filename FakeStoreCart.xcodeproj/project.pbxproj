@@ -20,6 +20,7 @@
 		FD766B5C28872EA8004F1768 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5B28872EA8004F1768 /* BaseViewController.swift */; };
 		FD766B5E28873047004F1768 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5D28873047004F1768 /* Extensions.swift */; };
 		FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5F28873656004F1768 /* CustomNvigationController.swift */; };
+		FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B61288739F7004F1768 /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FD766B5B28872EA8004F1768 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FD766B5D28873047004F1768 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
+		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				FD766B4C28871D2A004F1768 /* HomeViewController.swift */,
 				FD766B5928872B94004F1768 /* HomeViewModel.swift */,
+				FD766B61288739F7004F1768 /* ItemTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				FD766B5728872203004F1768 /* APIService.swift in Sources */,
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
+				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
 				FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */,
 				FD766B5E28873047004F1768 /* Extensions.swift in Sources */,
