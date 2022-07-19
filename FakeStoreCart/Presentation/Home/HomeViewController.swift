@@ -11,6 +11,12 @@ import Combine
 
 class HomeViewController : UIViewController, BaseViewController {
     
+    private lazy var itemsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .gray
+        return tableView
+    }()
+    
     let viewModel = HomeViewModel(service: FakeStoreAPI.shared)
     var cancellables = Set<AnyCancellable>()
     
@@ -22,7 +28,24 @@ class HomeViewController : UIViewController, BaseViewController {
     }
     
     func configureUI() {
+        view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
         
+        if let navigation = self.navigationController as? CustomNavigationController {
+            navigation.requiredStatusBarStyle = .darkContent
+        }
+        
+        view.addSubview(itemsTableView)
+        itemsTableView.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 10,
+            paddingLeft: 10,
+            paddingBottom: 10,
+            paddingRight: 10)
     }
     
     func setupObservers() {

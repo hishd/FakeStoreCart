@@ -19,6 +19,7 @@
 		FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5928872B94004F1768 /* HomeViewModel.swift */; };
 		FD766B5C28872EA8004F1768 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5B28872EA8004F1768 /* BaseViewController.swift */; };
 		FD766B5E28873047004F1768 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5D28873047004F1768 /* Extensions.swift */; };
+		FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5F28873656004F1768 /* CustomNvigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FD766B5928872B94004F1768 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FD766B5B28872EA8004F1768 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FD766B5D28873047004F1768 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				FD766B542887218F004F1768 /* AppConstants.swift */,
 				FD766B5D28873047004F1768 /* Extensions.swift */,
+				FD766B5F28873656004F1768 /* CustomNvigationController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
+				FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */,
 				FD766B5E28873047004F1768 /* Extensions.swift in Sources */,
 				FD766B5C28872EA8004F1768 /* BaseViewController.swift in Sources */,
 				FD766B5228871FD8004F1768 /* FakeStoreAPI.swift in Sources */,
