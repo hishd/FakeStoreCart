@@ -16,6 +16,7 @@
 		FD766B5228871FD8004F1768 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5128871FD8004F1768 /* APIManager.swift */; };
 		FD766B552887218F004F1768 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B542887218F004F1768 /* AppConstants.swift */; };
 		FD766B5728872203004F1768 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5628872203004F1768 /* APIService.swift */; };
+		FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5928872B94004F1768 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FD766B5128871FD8004F1768 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FD766B542887218F004F1768 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		FD766B5628872203004F1768 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FD766B5928872B94004F1768 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,7 @@
 		FD766B4828871C43004F1768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FD766B4C28871D2A004F1768 /* HomeViewController.swift */,
+				FD766B5828872B83004F1768 /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -130,6 +132,15 @@
 				FD766B5628872203004F1768 /* APIService.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		FD766B5828872B83004F1768 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FD766B4C28871D2A004F1768 /* HomeViewController.swift */,
+				FD766B5928872B94004F1768 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				FD766B4F28871EF3004F1768 /* Item.swift in Sources */,
 				FD766B5728872203004F1768 /* APIService.swift in Sources */,
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
+				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
 				FD766B5228871FD8004F1768 /* APIManager.swift in Sources */,
 				FD766B3628871B11004F1768 /* SceneDelegate.swift in Sources */,
