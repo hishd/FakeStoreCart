@@ -70,8 +70,8 @@ class HomeViewController : UIViewController, BaseViewController {
     func setupObservers() {
         viewModel.$itemsList
             .receive(on: RunLoop.main)
-            .sink { items in
-                self.itemsList = items
+            .sink { [weak self] items in
+                self?.itemsList = items
             }.store(in: &self.cancellables)
     }
 }
