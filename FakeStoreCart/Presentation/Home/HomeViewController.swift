@@ -37,11 +37,11 @@ class HomeViewController : UIViewController, BaseViewController {
         view.backgroundColor = UIColor.blue
         configureUI()
         setupObservers()
+        viewModel.getItems()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.getItems()
     }
     
     func configureUI() {
@@ -83,7 +83,7 @@ class HomeViewController : UIViewController, BaseViewController {
     }
     
     @objc func onCartTapped() {
-        print("Tapped Cart Button")
+        self.navigationController?.pushViewController(CartViewController(), animated: true)
     }
 }
 

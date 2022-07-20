@@ -23,6 +23,7 @@
 		FD766B5E28873047004F1768 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5D28873047004F1768 /* Extensions.swift */; };
 		FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5F28873656004F1768 /* CustomNvigationController.swift */; };
 		FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B61288739F7004F1768 /* ItemTableViewCell.swift */; };
+		FDE7204C28887D60008D9ADC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7204B28887D60008D9ADC /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FD766B5D28873047004F1768 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
 		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		FDE7204B28887D60008D9ADC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,6 @@
 				4508F5906CB7BC503BA73D61 /* Pods-FakeStoreCart.debug.xcconfig */,
 				1CCCC72647CECF123B77A2DF /* Pods-FakeStoreCart.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +124,7 @@
 		FD766B4828871C43004F1768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FDE7204A28887D3A008D9ADC /* Cart */,
 				FD766B5828872B83004F1768 /* Home */,
 				FD766B5B28872EA8004F1768 /* BaseViewController.swift */,
 			);
@@ -181,6 +183,14 @@
 				FD766B61288739F7004F1768 /* ItemTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FDE7204A28887D3A008D9ADC /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7204B28887D60008D9ADC /* CartViewController.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +309,7 @@
 			files = (
 				FD766B4F28871EF3004F1768 /* Item.swift in Sources */,
 				FD766B5728872203004F1768 /* APIService.swift in Sources */,
+				FDE7204C28887D60008D9ADC /* CartViewController.swift in Sources */,
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
 				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
