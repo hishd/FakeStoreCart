@@ -7,13 +7,18 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class ItemTableViewCell : UITableViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .cyan
+        view.backgroundColor = #colorLiteral(red: 0.9719485641, green: 0.9719484448, blue: 0.9719484448, alpha: 1)
         view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 3.5
         return view
     }()
     
@@ -93,5 +98,6 @@ class ItemTableViewCell : UITableViewCell {
         priceLabel.text = String(format: "%.2f", item.price)
         categoryLabel.text = item.category
         descriptionLabel.text = item.description
+        itemImageView.kf.setImage(with: URL(string: item.image), placeholder: UIImage(systemName: "airtag"))
     }
 }
