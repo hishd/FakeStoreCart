@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD5323B628885E460097E84A /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5323B528885E460097E84A /* ImageViewExtension.swift */; };
 		FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B3328871B11004F1768 /* AppDelegate.swift */; };
 		FD766B3628871B11004F1768 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B3528871B11004F1768 /* SceneDelegate.swift */; };
 		FD766B3D28871B15004F1768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD766B3C28871B15004F1768 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD5323B528885E460097E84A /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		FD766B3028871B11004F1768 /* FakeStoreCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeStoreCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD766B3328871B11004F1768 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD766B3528871B11004F1768 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				FD766B542887218F004F1768 /* AppConstants.swift */,
 				FD766B5D28873047004F1768 /* Extensions.swift */,
 				FD766B5F28873656004F1768 /* CustomNvigationController.swift */,
+				FD5323B528885E460097E84A /* ImageViewExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
 				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
+				FD5323B628885E460097E84A /* ImageViewExtension.swift in Sources */,
 				FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */,
 				FD766B5E28873047004F1768 /* Extensions.swift in Sources */,
 				FD766B5C28872EA8004F1768 /* BaseViewController.swift in Sources */,

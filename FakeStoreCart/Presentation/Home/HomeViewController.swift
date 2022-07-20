@@ -11,6 +11,12 @@ import Combine
 
 class HomeViewController : UIViewController, BaseViewController {
     
+    private var itemsList: [Item] = [] {
+        didSet {
+            itemsTableView.reloadData()
+        }
+    }
+    
     private lazy var itemsTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor.clear
@@ -26,6 +32,11 @@ class HomeViewController : UIViewController, BaseViewController {
         view.backgroundColor = UIColor.blue
         configureUI()
         setupObservers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.getItems()
     }
     
     func configureUI() {
@@ -60,23 +71,39 @@ class HomeViewController : UIViewController, BaseViewController {
         viewModel.$itemsList
             .receive(on: RunLoop.main)
             .sink { items in
-                
+                self.itemsList = items
             }.store(in: &self.cancellables)
     }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return itemsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemTableViewCell else {
             fatalError("Unabel to create cell")
         }
-        
+        cell.setData(item: itemsList[indexPath.row])
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: cell.contentView.frame.height)
+        cell.alpha = 0
+
+        UIView.animate(
+            withDuration: 0.4,
+            delay: 0.03 * Double(indexPath.row),
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 0.1,
+            options: [.curveEaseInOut],
+            animations: {
+
+                cell.alpha = 1
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+
+        })
+    }
 }
