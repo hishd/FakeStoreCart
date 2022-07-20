@@ -24,6 +24,11 @@ class HomeViewController : UIViewController, BaseViewController {
         return tableView
     }()
     
+    private lazy var cartButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(onCartTapped))
+        return button
+    }()
+    
     let viewModel = HomeViewModel(service: FakeStoreAPI.shared)
     var cancellables = Set<AnyCancellable>()
     
@@ -47,6 +52,8 @@ class HomeViewController : UIViewController, BaseViewController {
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        navigationItem.rightBarButtonItem = cartButton
         
         if let navigation = self.navigationController as? CustomNavigationController {
             navigation.requiredStatusBarStyle = .darkContent
@@ -73,6 +80,10 @@ class HomeViewController : UIViewController, BaseViewController {
             .sink { [weak self] items in
                 self?.itemsList = items
             }.store(in: &self.cancellables)
+    }
+    
+    @objc func onCartTapped() {
+        print("Tapped Cart Button")
     }
 }
 
