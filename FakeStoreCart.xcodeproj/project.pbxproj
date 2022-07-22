@@ -23,6 +23,8 @@
 		FD766B5E28873047004F1768 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5D28873047004F1768 /* Extensions.swift */; };
 		FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B5F28873656004F1768 /* CustomNvigationController.swift */; };
 		FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B61288739F7004F1768 /* ItemTableViewCell.swift */; };
+		FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A58288B109F0071B3F0 /* CartViewModel.swift */; };
+		FDA08A61288B19F50071B3F0 /* TinyCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */; };
 		FDE7204C28887D60008D9ADC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7204B28887D60008D9ADC /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,7 @@
 		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
 		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TinyCart.xcodeproj; path = ../TinyCartSwift/TinyCart.xcodeproj; sourceTree = "<group>"; };
+		FDA08A58288B109F0071B3F0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		FDE7204B28887D60008D9ADC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA08A61288B19F50071B3F0 /* TinyCart.framework in Frameworks */,
 				2C4F00D8034B7CA57BA01BA8 /* Pods_FakeStoreCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE7204B28887D60008D9ADC /* CartViewController.swift */,
+				FDA08A58288B109F0071B3F0 /* CartViewModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
 				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
+				FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
 				FD5323B628885E460097E84A /* ImageViewExtension.swift in Sources */,
 				FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */,
