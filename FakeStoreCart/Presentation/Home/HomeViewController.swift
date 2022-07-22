@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-class HomeViewController : UIViewController, BaseViewController {
+class HomeViewController : UIViewController, BaseController {
     
     private var itemsList: [Item] = [] {
         didSet {

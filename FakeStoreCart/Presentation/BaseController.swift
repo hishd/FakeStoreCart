@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol BaseViewController {
+protocol BaseController {
     func configureUI()
 }
