@@ -72,6 +72,13 @@ class ItemTableViewCell : UITableViewCell {
         return view
     }()
     
+    private lazy var onTapGesture: UIGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(onTapItem))
+    }()
+    
+    private var item: Item?
+    var callback: ((Item) -> Void)?
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -89,15 +96,24 @@ class ItemTableViewCell : UITableViewCell {
         containerView.addSubview(stackView)
         stackView.anchor(top: containerView.topAnchor, left: itemImageView.rightAnchor, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 5)
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = .clear
     }
+    
     func setData(item: Item) {
+        self.item = item
         titleLabel.text = item.title
         priceLabel.text = String(format: "%.2f", item.price)
         categoryLabel.text = item.category
         descriptionLabel.text = item.description
         itemImageView.kf.setImage(with: URL(string: item.image), placeholder: UIImage(systemName: "airtag"))
+    }
+
+    @objc func onTapItem() {
+        if let item = item, let callback = callback {
+            callback(item)
+        }
     }
 }

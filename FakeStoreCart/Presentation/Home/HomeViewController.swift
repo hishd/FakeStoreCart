@@ -97,6 +97,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Unabel to create cell")
         }
         cell.setData(item: itemsList[indexPath.row])
+        cell.callback = { item in
+            self.navigationController?.pushViewController(ItemInfoViewController(viewModel: ItemInfoViewModel(item: item)), animated: true)
+        }
         return cell
     }
     
