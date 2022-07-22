@@ -12,6 +12,10 @@ class CartViewModel: ObservableObject {
     
     private let cart = Cart.shared
     
+    func getCartItems() -> [AnyHashable: Int] {
+        return cart.getItemsWithQuantity()
+    }
+    
     func removeItem<T>(item: T) throws where T: ItemProtocol {
         try cart.removeItem(item: item)
     }
@@ -22,5 +26,9 @@ class CartViewModel: ObservableObject {
 
     func getCartTotalWithItems() -> (Double, Int) {
         return (cart.getTotalPrice(), 0)
+    }
+    
+    func getItemCount() -> Int {
+        return cart.getItemCount()
     }
 }
