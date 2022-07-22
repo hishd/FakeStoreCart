@@ -26,6 +26,16 @@
 		FDE7204C28887D60008D9ADC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7204B28887D60008D9ADC /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FDA08A55288B0F7B0071B3F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDE720572888841E008D9ADC;
+			remoteInfo = TinyCart;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		14664744EE3BA1C54CE70622 /* Pods_FakeStoreCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeStoreCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCCC72647CECF123B77A2DF /* Pods-FakeStoreCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeStoreCart.release.xcconfig"; path = "Target Support Files/Pods-FakeStoreCart/Pods-FakeStoreCart.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +57,7 @@
 		FD766B5D28873047004F1768 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
 		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TinyCart.xcodeproj; path = ../TinyCartSwift/TinyCart.xcodeproj; sourceTree = "<group>"; };
 		FDE7204B28887D60008D9ADC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +93,7 @@
 		FD766B2728871B11004F1768 = {
 			isa = PBXGroup;
 			children = (
+				FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */,
 				FD766B3228871B11004F1768 /* FakeStoreCart */,
 				FD766B3128871B11004F1768 /* Products */,
 				7872A27F50386753C7D7EB44 /* Pods */,
@@ -185,6 +197,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		FDA08A52288B0F7B0071B3F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FDE7204A28887D3A008D9ADC /* Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,12 +261,28 @@
 			mainGroup = FD766B2728871B11004F1768;
 			productRefGroup = FD766B3128871B11004F1768 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FDA08A52288B0F7B0071B3F0 /* Products */;
+					ProjectRef = FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FD766B2F28871B11004F1768 /* FakeStoreCart */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TinyCart.framework;
+			remoteRef = FDA08A55288B0F7B0071B3F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FD766B2E28871B11004F1768 /* Resources */ = {
