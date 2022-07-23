@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Kingfisher
 import Combine
+import NotificationBannerSwift
 
 class ItemInfoViewController: UIViewController, BaseController {
     
@@ -257,7 +258,13 @@ class ItemInfoViewController: UIViewController, BaseController {
     }
     
     @objc private func handleAddtoCart() {
-        
+        do {
+            try viewModel.addToCart()
+            NotificationBanner(title: "Item Added", subtitle: "Item added to cart", style: .success).show()
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @objc private func handleQtyIncrement() {
