@@ -29,6 +29,33 @@ class HomeViewController : UIViewController, BaseController {
         return button
     }()
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.color = .gray
+        indicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        return indicator
+    }()
+    
+    private lazy var loadingIndicatorCaption: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15)
+        label.textAlignment = .center
+        label.text = "Loading"
+        label.setWidth(of: 100)
+        return label
+    }()
+    
+    private lazy var loadingStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.addArrangedSubview(loadingIndicator)
+        stackView.addArrangedSubview(loadingIndicatorCaption)
+        return stackView
+    }()
+    
     let viewModel = HomeViewModel(service: FakeStoreAPI.shared)
     var cancellables = Set<AnyCancellable>()
     
@@ -37,6 +64,7 @@ class HomeViewController : UIViewController, BaseController {
         view.backgroundColor = UIColor.blue
         configureUI()
         setupObservers()
+        loadingIndicator.isHidden = false
         viewModel.getItems()
     }
     
@@ -72,6 +100,9 @@ class HomeViewController : UIViewController, BaseController {
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
         itemsTableView.register(ItemTableViewCell.self, forCellReuseIdentifier: "ItemCell")
+        
+        view.addSubview(loadingStackView)
+        loadingStackView.center(inView: self.view)
     }
     
     func setupObservers() {
@@ -80,6 +111,18 @@ class HomeViewController : UIViewController, BaseController {
             .sink { [weak self] items in
                 self?.itemsList = items
             }.store(in: &self.cancellables)
+        viewModel.$isLoading
+            .receive(on: RunLoop.main)
+            .sink { isLoading in
+                if isLoading {
+                    self.loadingStackView.isHidden = false
+                    self.loadingIndicator.startAnimating()
+                } else {
+                    self.loadingStackView.isHidden = true
+                    self.loadingIndicator.stopAnimating()
+                }
+            }
+            .store(in: &self.cancellables)
     }
     
     @objc func onCartTapped() {
