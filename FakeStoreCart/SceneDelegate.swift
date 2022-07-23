@@ -16,9 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        //TODO: Remove after testing is completed
+        let item = Item(id: 1,
+                        title: "Mens Casual Premium Slim Fit T-Shirts",
+                        price: 22.3,
+                        description: "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+                        category: "men's clothing",
+                        image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+                        rating: Rating(rate: 4.1, count: 259))
+        let ItemInfoVC = ItemInfoViewController(viewModel: ItemInfoViewModel(item: item))
+        
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = CustomNavigationController(rootViewController: HomeViewController())
+//        window?.rootViewController = CustomNavigationController(rootViewController: HomeViewController())
+        window?.rootViewController = CustomNavigationController(rootViewController: ItemInfoVC)
         window?.makeKeyAndVisible()
     }
 
