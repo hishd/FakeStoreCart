@@ -31,8 +31,8 @@ class ItemTableViewCell : UITableViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UITextView = {
-        let view = UITextView()
+    private lazy var titleLabel: UILabel = {
+        let view = UILabel()
         view.backgroundColor = .clear
         view.textColor = .black
         view.font = .boldSystemFont(ofSize: 12)
@@ -41,8 +41,8 @@ class ItemTableViewCell : UITableViewCell {
         return view
     }()
     
-    private lazy var priceLabel: UITextView = {
-        let view = UITextView()
+    private lazy var priceLabel: UILabel = {
+        let view = UILabel()
         view.backgroundColor = .clear
         view.textColor = .black
         view.font = .boldSystemFont(ofSize: 12)
@@ -51,8 +51,8 @@ class ItemTableViewCell : UITableViewCell {
         return view
     }()
     
-    private lazy var categoryLabel: UITextView = {
-        let view = UITextView()
+    private lazy var categoryLabel: UILabel = {
+        let view = UILabel()
         view.backgroundColor = .clear
         view.textColor = .black
         view.font = .boldSystemFont(ofSize: 12)
@@ -61,12 +61,12 @@ class ItemTableViewCell : UITableViewCell {
         return view
     }()
     
-    private lazy var descriptionLabel: UITextView = {
-        let view = UITextView()
+    private lazy var descriptionLabel: UILabel = {
+        let view = UILabel()
         view.backgroundColor = .clear
         view.textColor = .black
         view.font = .systemFont(ofSize: 12)
-        view.textContainer.maximumNumberOfLines = 2
+        view.numberOfLines = 2
         view.text = "Description"
         view.setHeight(of: 50)
         return view
@@ -83,7 +83,7 @@ class ItemTableViewCell : UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         addSubview(containerView)
-        containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: self.frame.width - 20, height: 140)
+        containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 8, paddingBottom: 5, paddingRight: 8, width: self.frame.width - 20, height: 140)
         
         containerView.addSubview(itemImageView)
         itemImageView.setDimensions(height: 120, width: 120)
@@ -94,12 +94,14 @@ class ItemTableViewCell : UITableViewCell {
         stackView.spacing = 2
         
         containerView.addSubview(stackView)
+        addGestureRecognizer(onTapGesture)
         stackView.anchor(top: containerView.topAnchor, left: itemImageView.rightAnchor, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 5)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = .clear
+        self.selectionStyle = .none
     }
     
     func setData(item: Item) {

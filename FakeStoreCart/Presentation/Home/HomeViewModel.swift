@@ -10,6 +10,7 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var itemsList: [Item] = []
+    @Published var isLoading: Bool = true
     private var cancellables = Set<AnyCancellable>()
     let service: APIService
     
@@ -18,8 +19,10 @@ class HomeViewModel: ObservableObject {
     }
     
     func getItems() {
+        self.isLoading = true
         service.getData(endPoint: EndPoint.getProducts, type: Item.self)
             .sink { completion in
+                self.isLoading = false
                 switch(completion) {
                 case .failure(let error) :
                     print(error)
