@@ -32,6 +32,7 @@ class ItemInfoViewController: UIViewController, BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     }
     
     func configureUI() {

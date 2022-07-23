@@ -94,7 +94,7 @@ class ItemTableViewCell : UITableViewCell {
         stackView.spacing = 2
         
         containerView.addSubview(stackView)
-        containerView.addGestureRecognizer(onTapGesture)
+        addGestureRecognizer(onTapGesture)
         stackView.anchor(top: containerView.topAnchor, left: itemImageView.rightAnchor, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 5)
     }
     
