@@ -77,7 +77,7 @@ class CartTableViewCell: UITableViewCell {
         label.setWidth(of: 25)
         label.font = .boldSystemFont(ofSize: 16)
         label.textAlignment = .center
-        label.text = "\(item.qty)"
+        label.text = String(format: "%d", item.qty)
         return label
     }()
 
@@ -135,7 +135,7 @@ class CartTableViewCell: UITableViewCell {
         }
         self.item.qty += 1
         DispatchQueue.main.async {
-            self.selectedQty.text = "\(self.item.qty)"
+            self.selectedQty.text = String(format: "%d", self.item.qty)
         }
         self.publishCallback(item: self.item, qty: self.item.qty)
     }
@@ -146,7 +146,7 @@ class CartTableViewCell: UITableViewCell {
         }
         self.item.qty -= 1
         DispatchQueue.main.async {
-            self.selectedQty.text = "\(self.item.qty)"
+            self.selectedQty.text = String(format: "%d", self.item.qty)
         }
         self.publishCallback(item: self.item, qty: self.item.qty)
     }
