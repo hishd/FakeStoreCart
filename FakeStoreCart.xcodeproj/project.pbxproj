@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				FD766B5328872183004F1768 /* Util */,
-				FD766B4B28871C79004F1768 /* Domain */,
 				FD766B4A28871C73004F1768 /* Data */,
 				FD766B4828871C43004F1768 /* Presentation */,
 				FD766B3328871B11004F1768 /* AppDelegate.swift */,
@@ -198,13 +197,6 @@
 				FD766B4928871C51004F1768 /* Persistance */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		FD766B4B28871C79004F1768 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		FD766B5028871FC2004F1768 /* API */ = {
