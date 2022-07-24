@@ -115,8 +115,12 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.setData(item: cartItems[indexPath.row])
         cell.callback = { [weak self] item, qty in
-            try? self?.viewModel.updateQty(item: item, qty: qty)
-            self?.totalPrice.text = String(format: "Total Price : $%.2f", self?.viewModel.getCartTotal() ?? 0.0)
+            do {
+                try self?.viewModel.updateQty(item: item, qty: qty)
+                self?.totalPrice.text = String(format: "Total Price : $%.2f", self?.viewModel.getCartTotal() ?? 0.0)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         return cell
     }

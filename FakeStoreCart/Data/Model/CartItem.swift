@@ -8,9 +8,13 @@
 import Foundation
 import TinyCart
 
-struct CartItem: ItemProtocol {
-    var name: String
-    var price: Double
+class CartItem: TinyCartItem {
     var qty: Int
     var image: String
+    
+    init(name: String, price: Double, qty: Int, image: String) {
+        self.qty = qty
+        self.image = image
+        super.init(name: name, price: price)
+    }
 }

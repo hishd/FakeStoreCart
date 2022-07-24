@@ -133,11 +133,10 @@ class CartTableViewCell: UITableViewCell {
         if item.qty >= 99 {
             return
         }
+        self.item.qty += 1
         DispatchQueue.main.async {
-            self.item.qty += 1
             self.selectedQty.text = "\(self.item.qty)"
         }
-        
         self.publishCallback(item: self.item, qty: self.item.qty)
     }
     
@@ -145,8 +144,8 @@ class CartTableViewCell: UITableViewCell {
         if item.qty <= 1 {
             return
         }
+        self.item.qty -= 1
         DispatchQueue.main.async {
-            self.item.qty -= 1
             self.selectedQty.text = "\(self.item.qty)"
         }
         self.publishCallback(item: self.item, qty: self.item.qty)

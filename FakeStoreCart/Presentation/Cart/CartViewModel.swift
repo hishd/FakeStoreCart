@@ -20,12 +20,12 @@ class CartViewModel: ObservableObject {
         })
     }
     
-    func removeItem<T>(item: T) throws where T: ItemProtocol {
+    func removeItem<T>(item: T) throws where T: TinyCartItem {
         try cart.removeItem(item: item)
         getCartItems()
     }
 
-    func updateQty<T>(item: T, qty: Int) throws where T: ItemProtocol {
+    func updateQty<T>(item: T, qty: Int) throws where T: TinyCartItem {
         try cart.setQuantity(item: item, qty: qty)
     }
 
