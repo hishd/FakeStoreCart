@@ -8,5 +8,6 @@ target 'FakeStoreCart' do
   # Pods for FakeStoreCart
   pod 'Kingfisher'
   pod 'NotificationBannerSwift'
+  pod 'Swinject'
 
 end

@@ -11,6 +11,9 @@ import Combine
 
 class HomeViewController : UIViewController, BaseController {
     
+    let viewModel = DIContainer.shared.container.resolve(HomeViewModel.self)
+    var cancellables = Set<AnyCancellable>()
+    
     private var itemsList: [Item] = [] {
         didSet {
             itemsTableView.reloadData()
@@ -56,16 +59,13 @@ class HomeViewController : UIViewController, BaseController {
         return stackView
     }()
     
-    let viewModel = HomeViewModel(service: FakeStoreAPI.shared)
-    var cancellables = Set<AnyCancellable>()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
         configureUI()
         setupObservers()
         loadingIndicator.isHidden = false
-        viewModel.getItems()
+        viewModel?.getItems()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,12 +106,12 @@ class HomeViewController : UIViewController, BaseController {
     }
     
     func setupObservers() {
-        viewModel.$itemsList
+        viewModel?.$itemsList
             .receive(on: RunLoop.main)
             .sink { [weak self] items in
                 self?.itemsList = items
             }.store(in: &self.cancellables)
-        viewModel.$isLoading
+        viewModel?.$isLoading
             .receive(on: RunLoop.main)
             .sink { isLoading in
                 if isLoading {
