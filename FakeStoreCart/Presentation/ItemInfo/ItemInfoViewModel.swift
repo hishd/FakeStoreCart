@@ -20,7 +20,7 @@ class ItemInfoViewModel: ObservableObject {
     }
     
     func addToCart() throws {
-        try cart.addItem(item: CartItem(name: item.title, price: item.price), qty: selectedQty)
+        try cart.addItem(item: CartItem(name: item.title, price: item.price, qty: selectedQty, image: item.image), qty: selectedQty)
     }
     
     func getTotal() {

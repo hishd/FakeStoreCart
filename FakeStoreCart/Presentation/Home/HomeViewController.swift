@@ -111,15 +111,16 @@ class HomeViewController : UIViewController, BaseController {
             .sink { [weak self] items in
                 self?.itemsList = items
             }.store(in: &self.cancellables)
+        
         viewModel?.$isLoading
             .receive(on: RunLoop.main)
-            .sink { isLoading in
+            .sink { [weak self] isLoading in
                 if isLoading {
-                    self.loadingStackView.isHidden = false
-                    self.loadingIndicator.startAnimating()
+                    self?.loadingStackView.isHidden = false
+                    self?.loadingIndicator.startAnimating()
                 } else {
-                    self.loadingStackView.isHidden = true
-                    self.loadingIndicator.stopAnimating()
+                    self?.loadingStackView.isHidden = true
+                    self?.loadingIndicator.stopAnimating()
                 }
             }
             .store(in: &self.cancellables)

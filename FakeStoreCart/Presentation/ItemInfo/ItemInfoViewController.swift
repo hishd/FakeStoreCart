@@ -244,15 +244,15 @@ class ItemInfoViewController: UIViewController, BaseController {
     private func setupObservers() {
         viewModel.$selectedQty
             .receive(on: RunLoop.main)
-            .sink { qty in
-                self.selectedQty.text = "\(qty)"
+            .sink { [weak self] qty in
+                self?.selectedQty.text = "\(qty)"
             }
             .store(in: &self.cancellables)
         
         viewModel.$totalPrice
             .receive(on: RunLoop.main)
-            .sink { total in
-                self.totalPrice.text = String(format: "Total Price : $%.2f", total)
+            .sink { [weak self] total in
+                self?.totalPrice.text = String(format: "Total Price : $%.2f", total)
             }
             .store(in: &self.cancellables)
     }
