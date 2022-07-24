@@ -24,8 +24,8 @@ class CartViewModel: ObservableObject {
         try cart.updateQuantity(item: item, qty: qty)
     }
 
-    func getCartTotalWithItems() -> (Double, Int) {
-        return (cart.getTotalPrice(), 0)
+    func getCartTotal() -> Double {
+        return cart.getTotalPrice()
     }
     
     func getItemCount() -> Int {
