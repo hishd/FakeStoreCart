@@ -11,4 +11,6 @@ import TinyCart
 struct CartItem: ItemProtocol {
     var name: String
     var price: Double
+    var qty: Int
+    var image: String
 }

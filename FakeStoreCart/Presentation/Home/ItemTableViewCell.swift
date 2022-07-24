@@ -83,7 +83,7 @@ class ItemTableViewCell : UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         addSubview(containerView)
-        containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 8, paddingBottom: 5, paddingRight: 8, width: self.frame.width - 20, height: 140)
+        containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 8, paddingBottom: 5, paddingRight: 8, height: 140)
         
         containerView.addSubview(itemImageView)
         itemImageView.setDimensions(height: 120, width: 120)
