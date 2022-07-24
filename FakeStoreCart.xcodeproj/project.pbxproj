@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C4F00D8034B7CA57BA01BA8 /* Pods_FakeStoreCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14664744EE3BA1C54CE70622 /* Pods_FakeStoreCart.framework */; };
 		FD5323B628885E460097E84A /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5323B528885E460097E84A /* ImageViewExtension.swift */; };
+		FD6B391A288D0C4A00319E9A /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B3919288D0C4A00319E9A /* DIContainer.swift */; };
 		FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B3328871B11004F1768 /* AppDelegate.swift */; };
 		FD766B3628871B11004F1768 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B3528871B11004F1768 /* SceneDelegate.swift */; };
 		FD766B3D28871B15004F1768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD766B3C28871B15004F1768 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		1CCCC72647CECF123B77A2DF /* Pods-FakeStoreCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeStoreCart.release.xcconfig"; path = "Target Support Files/Pods-FakeStoreCart/Pods-FakeStoreCart.release.xcconfig"; sourceTree = "<group>"; };
 		4508F5906CB7BC503BA73D61 /* Pods-FakeStoreCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeStoreCart.debug.xcconfig"; path = "Target Support Files/Pods-FakeStoreCart/Pods-FakeStoreCart.debug.xcconfig"; sourceTree = "<group>"; };
 		FD5323B528885E460097E84A /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		FD6B3919288D0C4A00319E9A /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		FD766B3028871B11004F1768 /* FakeStoreCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeStoreCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD766B3328871B11004F1768 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD766B3528871B11004F1768 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD6B3917288D0BEB00319E9A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				FD6B3919288D0C4A00319E9A /* DIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		FD766B2728871B11004F1768 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		FD766B4828871C43004F1768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FD6B3917288D0BEB00319E9A /* DI */,
 				FDA08A62288B20D70071B3F0 /* ItemInfo */,
 				FDE7204A28887D3A008D9ADC /* Cart */,
 				FD766B5828872B83004F1768 /* Home */,
@@ -398,6 +409,7 @@
 				FD766B5C28872EA8004F1768 /* BaseController.swift in Sources */,
 				FD766B5228871FD8004F1768 /* FakeStoreAPI.swift in Sources */,
 				FD766B3628871B11004F1768 /* SceneDelegate.swift in Sources */,
+				FD6B391A288D0C4A00319E9A /* DIContainer.swift in Sources */,
 				FD766B4D28871D2A004F1768 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
