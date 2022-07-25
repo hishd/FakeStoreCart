@@ -81,9 +81,9 @@ class CartViewController: UIViewController, BaseController {
             left: view.safeAreaLayoutGuide.leftAnchor,
             bottom: checkoutStckView.topAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 10,
+            paddingTop: 0,
             paddingLeft: 10,
-            paddingBottom: 10,
+            paddingBottom: 0,
             paddingRight: 10)
         
         viewModel.getCartItems()
