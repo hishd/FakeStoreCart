@@ -29,6 +29,7 @@
 		FD7BD1AF288BC2A500ED26D0 /* TinyCart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD86A285288F09390041DFDA /* FakeStoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A284288F09390041DFDA /* FakeStoreRepository.swift */; };
 		FD86A287288F09C90041DFDA /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A286288F09C90041DFDA /* UseCases.swift */; };
+		FD86A289288F0B010041DFDA /* FakeStoreRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */; };
 		FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A58288B109F0071B3F0 /* CartViewModel.swift */; };
 		FDA08A64288B20F70071B3F0 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A63288B20F70071B3F0 /* ItemInfoViewController.swift */; };
 		FDA08A66288B21F00071B3F0 /* ItemInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A65288B21F00071B3F0 /* ItemInfoViewModel.swift */; };
@@ -85,6 +86,7 @@
 		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		FD86A284288F09390041DFDA /* FakeStoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreRepository.swift; sourceTree = "<group>"; };
 		FD86A286288F09C90041DFDA /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreRepositoryComponent.swift; sourceTree = "<group>"; };
 		FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TinyCart.xcodeproj; path = ../TinyCartSwift/TinyCart.xcodeproj; sourceTree = "<group>"; };
 		FDA08A58288B109F0071B3F0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		FDA08A63288B20F70071B3F0 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				FD766B5028871FC2004F1768 /* API */,
 				FD766B4728871C2D004F1768 /* Model */,
 				FD766B4928871C51004F1768 /* Persistance */,
+				FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD6B391C288D11BA00319E9A /* CartTableViewCell.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
+				FD86A289288F0B010041DFDA /* FakeStoreRepositoryComponent.swift in Sources */,
 				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
 				FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,

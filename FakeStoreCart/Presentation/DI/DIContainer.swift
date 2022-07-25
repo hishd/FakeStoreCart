@@ -17,8 +17,14 @@ class DIContainer {
         container.register(APIService.self) { _ in
             FakeStoreAPI.shared
         }
+        container.register(FakeStoreRepository.self) { resolver in
+            FakeStoreRepositoryComponent(service: resolver.resolve(APIService.self)!)
+        }
+        container.register(GetItemDataUseCase.self) { resolver in
+            GetItemDataUseCase(repository: resolver.resolve(FakeStoreRepository.self)!)
+        }
         container.register(HomeViewModel.self) { resolver in
-            HomeViewModel(service: resolver.resolve(APIService.self)!)
+            HomeViewModel(getItemDataUseCase: resolver.resolve(GetItemDataUseCase.self)!)
         }
         return container
     }()

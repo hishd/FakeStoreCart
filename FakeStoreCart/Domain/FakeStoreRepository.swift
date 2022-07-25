@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FakeStoreRepository {
-    func getItemData() -> [Item]
+    func getItemData(callback: @escaping (Result<[Item], Error>) -> Void)
 }

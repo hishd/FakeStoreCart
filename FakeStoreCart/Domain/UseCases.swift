@@ -8,12 +8,12 @@
 import Foundation
 
 class GetItemDataUseCase {
-    let repository: FakeStoreRepository
+    private let repository: FakeStoreRepository
     init(repository: FakeStoreRepository) {
         self.repository = repository
     }
     
-    func execute() -> [Item] {
-        return repository.getItemData()
+    func execute(callback: @escaping (Result<[Item], Error>) -> Void) {
+        repository.getItemData(callback: callback)
     }
 }

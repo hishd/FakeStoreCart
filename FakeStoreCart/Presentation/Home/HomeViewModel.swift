@@ -12,27 +12,24 @@ class HomeViewModel: ObservableObject {
     @Published var itemsList: [Item] = []
     @Published var isLoading: Bool = true
     private var cancellables = Set<AnyCancellable>()
-    let service: APIService
+    let getItemDataUseCase: GetItemDataUseCase
     
-    init(service: APIService) {
-        self.service = service
+    init(getItemDataUseCase: GetItemDataUseCase) {
+        self.getItemDataUseCase = getItemDataUseCase
     }
     
     func getItems() {
         self.isLoading = true
-        service.getData(endPoint: EndPoint.getProducts, type: Item.self)
-            .sink { completion in
-                self.isLoading = false
-                switch(completion) {
-                case .failure(let error) :
-                    print(error)
-                case .finished :
-                    print("Success")
-                }
-            } receiveValue: { [weak self] items in
+        
+        getItemDataUseCase.execute { [weak self] result in
+            self?.isLoading = false
+            switch(result) {
+            case .success(let items) :
                 self?.itemsList = items
+            case .failure(let error) :
+                print(error.localizedDescription)
             }
-            .store(in: &self.cancellables)
+        }
 
     }
 }
