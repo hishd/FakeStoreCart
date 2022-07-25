@@ -93,9 +93,9 @@ class HomeViewController : UIViewController, BaseController {
             left: view.safeAreaLayoutGuide.leftAnchor,
             bottom: view.safeAreaLayoutGuide.bottomAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 10,
+            paddingTop: 0,
             paddingLeft: 10,
-            paddingBottom: 10,
+            paddingBottom: 0,
             paddingRight: 10)
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
