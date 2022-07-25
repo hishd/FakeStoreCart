@@ -27,6 +27,9 @@
 		FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD766B61288739F7004F1768 /* ItemTableViewCell.swift */; };
 		FD7BD1AE288BC2A500ED26D0 /* TinyCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */; };
 		FD7BD1AF288BC2A500ED26D0 /* TinyCart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FDA08A56288B0F7B0071B3F0 /* TinyCart.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD86A285288F09390041DFDA /* FakeStoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A284288F09390041DFDA /* FakeStoreRepository.swift */; };
+		FD86A287288F09C90041DFDA /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A286288F09C90041DFDA /* UseCases.swift */; };
+		FD86A289288F0B010041DFDA /* FakeStoreRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */; };
 		FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A58288B109F0071B3F0 /* CartViewModel.swift */; };
 		FDA08A64288B20F70071B3F0 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A63288B20F70071B3F0 /* ItemInfoViewController.swift */; };
 		FDA08A66288B21F00071B3F0 /* ItemInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA08A65288B21F00071B3F0 /* ItemInfoViewModel.swift */; };
@@ -81,6 +84,9 @@
 		FD766B5D28873047004F1768 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD766B5F28873656004F1768 /* CustomNvigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNvigationController.swift; sourceTree = "<group>"; };
 		FD766B61288739F7004F1768 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		FD86A284288F09390041DFDA /* FakeStoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreRepository.swift; sourceTree = "<group>"; };
+		FD86A286288F09C90041DFDA /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreRepositoryComponent.swift; sourceTree = "<group>"; };
 		FDA08A51288B0F7B0071B3F0 /* TinyCart.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TinyCart.xcodeproj; path = ../TinyCartSwift/TinyCart.xcodeproj; sourceTree = "<group>"; };
 		FDA08A58288B109F0071B3F0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		FDA08A63288B20F70071B3F0 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 		FD766B3228871B11004F1768 /* FakeStoreCart */ = {
 			isa = PBXGroup;
 			children = (
+				FD86A280288F08D40041DFDA /* Domain */,
 				FD766B5328872183004F1768 /* Util */,
 				FD766B4A28871C73004F1768 /* Data */,
 				FD766B4828871C43004F1768 /* Presentation */,
@@ -195,6 +202,7 @@
 				FD766B5028871FC2004F1768 /* API */,
 				FD766B4728871C2D004F1768 /* Model */,
 				FD766B4928871C51004F1768 /* Persistance */,
+				FD86A288288F0B010041DFDA /* FakeStoreRepositoryComponent.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -227,6 +235,15 @@
 				FD766B61288739F7004F1768 /* ItemTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FD86A280288F08D40041DFDA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FD86A286288F09C90041DFDA /* UseCases.swift */,
+				FD86A284288F09390041DFDA /* FakeStoreRepository.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		FDA08A52288B0F7B0071B3F0 /* Products */ = {
@@ -396,13 +413,16 @@
 				FD766B552887218F004F1768 /* AppConstants.swift in Sources */,
 				FD6B391C288D11BA00319E9A /* CartTableViewCell.swift in Sources */,
 				FD766B5A28872B94004F1768 /* HomeViewModel.swift in Sources */,
+				FD86A289288F0B010041DFDA /* FakeStoreRepositoryComponent.swift in Sources */,
 				FD766B62288739F7004F1768 /* ItemTableViewCell.swift in Sources */,
 				FDA08A59288B109F0071B3F0 /* CartViewModel.swift in Sources */,
 				FD766B3428871B11004F1768 /* AppDelegate.swift in Sources */,
+				FD86A285288F09390041DFDA /* FakeStoreRepository.swift in Sources */,
 				FD5323B628885E460097E84A /* ImageViewExtension.swift in Sources */,
 				FD766B6028873656004F1768 /* CustomNvigationController.swift in Sources */,
 				FD766B5E28873047004F1768 /* Extensions.swift in Sources */,
 				FD766B5C28872EA8004F1768 /* BaseController.swift in Sources */,
+				FD86A287288F09C90041DFDA /* UseCases.swift in Sources */,
 				FD766B5228871FD8004F1768 /* FakeStoreAPI.swift in Sources */,
 				FD766B3628871B11004F1768 /* SceneDelegate.swift in Sources */,
 				FD6B391A288D0C4A00319E9A /* DIContainer.swift in Sources */,
