@@ -30,7 +30,7 @@ class CartViewController: UIViewController, BaseController {
         label.text = "Total Price : $"
         label.textColor = .darkGray
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 18)
         return label
     }()
     
@@ -83,7 +83,7 @@ class CartViewController: UIViewController, BaseController {
             right: view.safeAreaLayoutGuide.rightAnchor,
             paddingTop: 0,
             paddingLeft: 10,
-            paddingBottom: 0,
+            paddingBottom: 10,
             paddingRight: 10)
         
         viewModel.getCartItems()
@@ -123,6 +123,20 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            do {
+                try self.viewModel.removeItem(item: cartItems[indexPath.row])
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            DispatchQueue.main.async {
+                self.totalPrice.text = String(format: "Total Price : $%.2f", self.viewModel.getCartTotal())
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
