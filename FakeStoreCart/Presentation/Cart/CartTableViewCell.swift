@@ -83,12 +83,11 @@ class CartTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        self.addSubview(containerView)
-        containerView.anchor(top: self.safeAreaLayoutGuide.topAnchor,
-                             left: self.safeAreaLayoutGuide.leftAnchor,
-                             bottom: self.safeAreaLayoutGuide.bottomAnchor,
-                             right: self.safeAreaLayoutGuide.rightAnchor,
+        contentView.addSubview(containerView)
+        containerView.anchor(top: contentView.safeAreaLayoutGuide.topAnchor,
+                             left: contentView.safeAreaLayoutGuide.leftAnchor,
+                             bottom: contentView.safeAreaLayoutGuide.bottomAnchor,
+                             right: contentView.safeAreaLayoutGuide.rightAnchor,
                              paddingTop: 5,
                              paddingLeft: 8,
                              paddingBottom: 5,
