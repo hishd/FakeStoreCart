@@ -59,6 +59,14 @@ class HomeViewController : UIViewController, BaseController {
         return stackView
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefreshItems), for: .valueChanged)
+        refreshControl.tintColor = .systemBlue
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Items...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemBlue])
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
@@ -100,6 +108,7 @@ class HomeViewController : UIViewController, BaseController {
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
         itemsTableView.register(ItemTableViewCell.self, forCellReuseIdentifier: "ItemCell")
+        itemsTableView.addSubview(refreshControl)
         
         view.addSubview(loadingStackView)
         loadingStackView.center(inView: self.view)
@@ -109,6 +118,7 @@ class HomeViewController : UIViewController, BaseController {
         viewModel?.$itemsList
             .receive(on: RunLoop.main)
             .sink { [weak self] items in
+                self?.refreshControl.endRefreshing()
                 self?.itemsList = items
             }.store(in: &self.cancellables)
         
@@ -128,6 +138,10 @@ class HomeViewController : UIViewController, BaseController {
     
     @objc func onCartTapped() {
         self.navigationController?.pushViewController(CartViewController(), animated: true)
+    }
+    
+    @objc func onRefreshItems() {
+        viewModel?.getItems()
     }
 }
 
